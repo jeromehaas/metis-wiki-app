@@ -3,6 +3,7 @@ import { Button } from 'components/01-atoms/button/button';
 import { TextInput } from 'components/01-atoms/text-input/text-input';
 import { Hamburger } from 'components/01-atoms/hamburger/hamburger';
 import { Text } from 'components/01-atoms/text/text';
+import { Logo } from 'components/01-atoms/logo/logo';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TextInput></TextInput>
       <Hamburger />
       <Text>Text</Text>
+      <Logo />
   </div> 
   )
 }
