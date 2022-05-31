@@ -1,0 +1,39 @@
+.text-input {
+  background-color: $dark-100;
+  padding: 16px;
+  display: grid;
+  grid-template-areas:
+    "icon label"
+    "icon input";
+grid-template-rows: auto auto;
+grid-template-columns: auto 1fr;
+
+
+  &__icon {
+    color: $light-100;
+    grid-area: icon;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid red;
+    margin-right: 4px;
+  }
+  
+  &__label {
+    grid-area: label;
+    color: $light-20;
+  }
+  
+  &__input {
+    grid-area: input;
+    border: none;
+    border-bottom: 1px solid $light-100;
+    background-color: transparent;
+    color: $light-100;
+    padding: 4px;
+    caret-color: $orange-100;
+    outline: none;
+  }
+
+}    

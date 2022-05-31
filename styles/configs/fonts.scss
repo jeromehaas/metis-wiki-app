@@ -77,4 +77,83 @@
 	font-style: normal;
 	font-display: block;
 }
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-thin.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-thin.ttf') format('tff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-light.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-light.ttf') format('tff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-regular.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-regular.ttf') format('tff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-medium.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-medium.ttf') format('tff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-semibold.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-semibold.ttf') format('tff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-bold.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-bold.ttf') format('tff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-extrabold.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-extrabold.ttf') format('tff');
+	font-weight: 800;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+	local('fonts/roboto'), url('/fonts/roboto/roboto-black.woff2') format('woff2'),
+	local('fonts/roboto'), url('/fonts/roboto/roboto-black.ttf') format('tff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: block;
+}
 
