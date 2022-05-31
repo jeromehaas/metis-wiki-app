@@ -1,5 +1,9 @@
-@import './reset.scss';
-@import './fonts.scss';
-@import './variables.scss';
-@import './global.scss';
-@import './typography.scss';
+/* CONFIGS */
+@import './configs/reset.scss';
+@import './configs/fonts.scss';
+@import './configs/variables.scss';
+@import './configs/global.scss';
+@import './configs/typography.scss';
+
+/* ATOMS */ 
+@import './components/01-atoms/heading.scss';
