@@ -1,0 +1,42 @@
+
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Icon';
+  color: inherit;
+  flex-shrink: 0;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--small {
+  font-size: 16px;
+}
+
+.icon-large {
+  font-size: 24px;
+}
+
+.icon-extralarge {
+  font-size: 32px;
+}
+
+$icons: (
+  eye: 'ea02',
+  eye-closed: 'ea03',
+  file: 'ea04',
+  moon: 'ea05',
+  save: 'ea06',
+  sun: 'ea07',
+  trash: 'ea08',
+);
+
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+@each $name, $code in $icons {
+  .icon-#{"" +$name}::before {
+    content: unicode($code);
+  }
+}
