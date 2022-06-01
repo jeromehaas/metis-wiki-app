@@ -12,7 +12,7 @@ const Header = () => {
       <Logo className="header__logo" />
       <TextInput className="header__text-input" label="Document Name" />
       <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" />
-      <Button className="header__button" symbol="save">Save Changes</Button>
+      <Button className="header__button button--hide-text-on-small" symbol="save">Save Changes</Button>
     </div>
   )
 

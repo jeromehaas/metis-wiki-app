@@ -1,0 +1,20 @@
+.sidepanel {
+  padding: 24px;
+  width: 250px;
+  background-color: $dark-80;
+
+  &__subheading {
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__text-input {
+    margin-bottom: 24px;
+  }
+
+
+}
