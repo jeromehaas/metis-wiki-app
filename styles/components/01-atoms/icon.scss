@@ -13,12 +13,24 @@
   font-size: 16px;
 }
 
-.icon-large {
+.icon--medium {
+  font-size: 20px;
+}
+
+.icon--large {
   font-size: 24px;
 }
 
-.icon-extralarge {
+.icon--extralarge {
   font-size: 32px;
+}
+
+.icon--white {
+  color: $light-100;
+}
+
+.icon--grey {
+  color: $light-20;
 }
 
 $icons: (

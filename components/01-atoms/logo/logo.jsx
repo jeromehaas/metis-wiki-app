@@ -1,7 +1,7 @@
 const Logo = ({ className }) => {
 
   return (
-    <p className={`logo ${className ? className : ''}`}>METIS</p>
+    <img className={`logo ${className ? className : ''}`} src="media/graphics/logo-markdown-editor.svg" />
   )
 };
 

@@ -1,6 +1,4 @@
 .text-input {
-  background-color: $dark-100;
-  padding: 16px;
   display: grid;
   grid-template-areas:
     "icon label"
@@ -15,8 +13,7 @@ grid-template-columns: auto 1fr;
     align-self: center;
     justify-content: center;
     text-align: center;
-    padding: 8px;
-    border: 1px solid red;
+    padding: 8px 8px 8px 0;
     margin-right: 4px;
   }
   
@@ -28,12 +25,17 @@ grid-template-columns: auto 1fr;
   &__input {
     grid-area: input;
     border: none;
-    border-bottom: 1px solid $light-100;
     background-color: transparent;
     color: $light-100;
-    padding: 4px;
+    padding: 4px 0;
     caret-color: $orange-100;
     outline: none;
+    color: $light-100;
+    
+    &:focus {
+      border-bottom: 1px solid $light-100;
+    }
+
   }
 
 }    
