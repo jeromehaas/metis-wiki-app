@@ -1,7 +1,15 @@
 .sidepanel {
   padding: 24px;
   width: 250px;
+  height: 100%;
   background-color: $dark-80;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
 
   &__subheading {
     margin-bottom: 24px;
@@ -14,6 +22,10 @@
 
   &__text-input {
     margin-bottom: 24px;
+  }
+
+  &__theme-toggle {
+    margin-top: auto;
   }
 
 

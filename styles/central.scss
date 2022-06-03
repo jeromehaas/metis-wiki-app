@@ -14,7 +14,12 @@
 @import './components/01-atoms/logo.scss';
 @import './components/01-atoms/icon.scss';
 @import './components/01-atoms/subheading.scss';
+@import './components/01-atoms/theme-toggle.scss';
 
 /* MOLECULES */
 @import './components/02-molecules/header.scss';
 @import './components/02-molecules/sidepanel.scss';
+
+
+/* ORGANISMS */
+@import './components/03-organisms/dashboard.scss';
