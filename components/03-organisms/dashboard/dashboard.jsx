@@ -7,15 +7,6 @@ import { getAllNotes } from 'redux/actions/notes';
 
 const Dashboard = () => {
 
-	const notes = useSelector( state => state.notes );
-	console.log(notes);
-
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch( getAllNotes() )
-	}, []);
-
   return (
     <div className="dashboard">
       <Header />

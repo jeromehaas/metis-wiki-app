@@ -5,7 +5,7 @@ const notesSchema = new Schema(
 		filename: { 
 			type: String, 
 			required: true, 
-			unique: true,
+			unique: false
 		}, 
 		dateCreated: {
 			type: String,

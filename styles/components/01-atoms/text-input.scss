@@ -1,20 +1,32 @@
 .text-input {
   display: grid;
   grid-template-areas:
-    "icon label"
-    "icon input";
+    "icon-file label icon-close"
+    "icon-file input icon-close";
 grid-template-rows: auto auto;
 grid-template-columns: auto 1fr;
 
 
-  &__icon {
+  &__icon, .icon {
     color: $light-100;
-    grid-area: icon;
-    align-self: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8px 8px 8px 0;
-    margin-right: 4px;
+		align-self: center;
+		justify-content: center;
+		text-align: center;
+		grid-row: span 2;		
+		
+		&--file {
+			grid-area: icon-file;
+			padding: 8px 8px 8px 0;
+			margin-right: 4px !important;
+		}
+
+		&--close {
+			grid-area: icon-close;
+			padding: 8px 8px 8px 0;
+			margin-right: 4px !important;
+			cursor: pointer;
+		}
+
   }
   
   &__label {
@@ -31,9 +43,11 @@ grid-template-columns: auto 1fr;
     caret-color: $orange-100;
     outline: none;
     color: $light-100;
+		cursor: pointer;
     
     &:focus {
       border-bottom: 1px solid $light-100;
+			cursor: text;
     }
 
   }
