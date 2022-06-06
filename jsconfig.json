@@ -13,6 +13,9 @@
       ],
       "redux/*": [
         "redux/*"
+      ],
+      "pages/*": [
+        "pages/*"
       ]
     }
   }

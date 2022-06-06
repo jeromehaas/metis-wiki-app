@@ -4,6 +4,7 @@ import { Sidepanel } from 'components/02-molecules/sidepanel/sidepanel';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllNotes } from 'redux/actions/notes';
 
+
 const Dashboard = () => {
 
 	const notes = useSelector( state => state.notes );
