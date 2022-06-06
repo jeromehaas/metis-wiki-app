@@ -50,7 +50,7 @@ $icons: (
 }
 
 @each $name, $code in $icons {
-  .icon-#{"" +$name}::before {
+  .icon--#{"" +$name}::before {
     content: unicode($code);
   }
 }

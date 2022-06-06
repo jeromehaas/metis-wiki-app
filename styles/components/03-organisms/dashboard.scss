@@ -17,12 +17,14 @@
 
   .editor {
     grid-area: editor;
-    border: 3px solid lightseagreen;
+		background-color: $dark-100;
+		transition: all 0.1s ease;
   }
   
   .preview {
     grid-area: preview;
-    border: 3px solid orangered;
+		background-color: $dark-100;
+		transition: all 0.1s ease;
   }
 
 }

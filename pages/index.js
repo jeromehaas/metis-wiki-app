@@ -1,9 +1,16 @@
-import { Header } from 'components/02-molecules/header/header';
-import { Sidepanel } from 'components/02-molecules/sidepanel/sidepanel';
 import { Dashboard } from 'components/03-organisms/dashboard/dashboard';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { toggleTheme } from 'redux/actions/theme';
 
 export default function Home() {
+
+	const dispatch = useDispatch();
+	const theme = useSelector(state => state.theme.active );
+
   return (
-    <Dashboard />
+		<div className={`page page--${ theme }`}>
+    	<Dashboard />
+		</div>
   )
 }

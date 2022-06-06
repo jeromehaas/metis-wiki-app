@@ -5,7 +5,7 @@ import { ThemeToggle } from 'components/01-atoms/theme-toggle/theme-toggle.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import { getAllNotes, createNote, deleteNote } from 'redux/actions/notes';
+import { getAllNotes, createNote, deleteNote, setToActiveNote } from 'redux/actions/notes';
 
 const Sidepanel = () => {
 
@@ -17,7 +17,7 @@ const Sidepanel = () => {
 	}, []);
 
   return (
-    <div className="sidepanel">
+    <div className="sidepanel sidepanel--light">
       <Subheading className="sidepanel__subheading">My Documents</Subheading>
       <Button className="sidepanel__button" onClick={ () => dispatch( createNote() ) }>New Document</Button>
 
@@ -28,6 +28,7 @@ const Sidepanel = () => {
 						label={ note.dateCreated } 
 						value={ note.filename } 
 						key={ note._id } 
+						onClick={ () => dispatch( setToActiveNote( note._id, note.filename, note.dateCreated ))}
 						onDelete={ () => dispatch( deleteNote( note._id )) }		
 					/>
 					))}

@@ -1,5 +1,6 @@
 let originalState = {
-	all: []
+	all: [],
+	active: {}
 };
 
 const notes = ( state = originalState, action ) => {
@@ -16,13 +17,22 @@ const notes = ( state = originalState, action ) => {
 				...state, 
 				all: action.payload
 			};
+			return originalState; 
 		};
 		case 'DELETE_NOTE': {
 			originalState = {
 				...state, 
 				all: action.payload
-			}
-		}
+			};
+			return originalState; 
+		};
+		case 'SET_TO_ACTIVE_NOTE': {
+			originalState = {
+				...state,
+				active: action.payload
+			};
+			return originalState; 
+		};
 		default: {
 			return originalState;
 		};

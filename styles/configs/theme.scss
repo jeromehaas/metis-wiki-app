@@ -1,0 +1,41 @@
+.page {
+
+	&--light {
+	
+		.dashboard {
+
+			.editor {
+				background-color: $light-100;
+			}
+			
+			.preview {
+				background-color: $light-100;
+			}
+
+		}
+
+		.theme-toggle {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 12px;
+			
+			&__icon, .icon {
+				transition: all 0.1s ease;
+		
+				&--moon {
+					color: $dark-20;
+				}
+				
+				&--sun {
+					color: $light-40;
+				}
+		
+			}
+
+		}
+
+	}
+
+
+}

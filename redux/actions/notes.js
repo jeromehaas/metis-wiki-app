@@ -52,8 +52,19 @@ const deleteNote = ( id ) => async ( dispatch ) => {
 	};
 };
 
+const SET_TO_ACTIVE_NOTE = 'SET_TO_ACTIVE_NOTE';
+const setToActiveNote = ( id, filename, dateCreated ) => async ( dispatch ) => {	
+	try {
+		const activeNote = { id, filename, dateCreated };
+		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+	} catch (error) {
+		console.log(`🔴 Error: ${error.message}`);
+	}
+}
+
 export {
 	getAllNotes,
 	createNote,
-	deleteNote
+	deleteNote,
+	setToActiveNote
 };
