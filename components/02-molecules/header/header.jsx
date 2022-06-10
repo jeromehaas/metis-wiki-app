@@ -5,15 +5,17 @@ import { Button } from 'components/01-atoms/button/button';
 import { Icon } from 'components/01-atoms/icon/icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { toggleMenu } from 'redux/actions/menu';
 
 const Header = () => {
 
 	const dispatch = useDispatch();
 	const activeNote = useSelector( state => state.notes.active);
+	const currentStatus = useSelector( state => state.menu.status);
 
   return (
     <div className="header">
-      <Hamburger className="header__hamburger" />
+      <Hamburger className="header__hamburger" currentStatus={ currentStatus } onClick={ () => dispatch( toggleMenu(currentStatus) ) } />
       <Logo className="header__logo" />
       <TextInput 
 				className="header__text-input" 

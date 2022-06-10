@@ -13,7 +13,7 @@ const theme = (state = originalState, action) => {
 		};
 		default: {
 			return originalState;
-		}
+		};
 	};
 };
 
