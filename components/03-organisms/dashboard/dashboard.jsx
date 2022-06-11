@@ -4,6 +4,7 @@ import { Sidepanel } from 'components/02-molecules/sidepanel/sidepanel';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllNotes } from 'redux/actions/notes';
 import { toggleMenu } from 'redux/actions/menu';
+import { Editor } from 'components/02-molecules/editor/editor';
 
 const Dashboard = () => {
 
@@ -14,7 +15,7 @@ const Dashboard = () => {
     <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''}`}>
       <Header />
       <Sidepanel />
-      <div className="editor"></div>
+			<Editor />
       <div className="preview"></div>
     </div>
   );
