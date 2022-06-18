@@ -1,8 +1,10 @@
+import moment from 'moment';
+
 const GET_ALL_NOTES = 'GET_ALL_NOTES';
-const getAllNotes = () => async ( dispatch ) => {
+const getAllNotes = () => async (dispatch) => {
 	try {
 		const response = await fetch('http://localhost:3000/api/routes/notes/get', {
-			method: 'GET', 
+			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
 			}
@@ -16,15 +18,16 @@ const getAllNotes = () => async ( dispatch ) => {
 };
 
 const CREATE_NOTE = 'CREATE_NOTE';
-const createNote = () => async ( dispatch ) => {
+const createNote = () => async (dispatch) => {
 
 	try {
+		const date = moment().format('DD-MM-YYYY');
 		const response = await fetch('http://localhost:3000/api/routes/notes/create', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ filename: 'untitled.md' , dateCreated: '01-01-2022' })
+			body: JSON.stringify({ filename: 'untitled.md', dateCreated: date })
 		});
 		const data = await response.json();
 		const notes = data.notes;
@@ -35,10 +38,10 @@ const createNote = () => async ( dispatch ) => {
 };
 
 const DELETE_NOTE = 'DELETE_NOTE';
-const deleteNote = ( id ) => async ( dispatch ) => {
+const deleteNote = (id) => async (dispatch) => {
 	try {
 		const response = await fetch('http://localhost:3000/api/routes/notes/delete', {
-			method: 'DELETE', 
+			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -53,7 +56,7 @@ const deleteNote = ( id ) => async ( dispatch ) => {
 };
 
 const SET_TO_ACTIVE_NOTE = 'SET_TO_ACTIVE_NOTE';
-const setToActiveNote = ( id, filename, dateCreated ) => async ( dispatch ) => {	
+const setToActiveNote = (id, filename, dateCreated) => async (dispatch) => {
 	try {
 		const activeNote = { id, filename, dateCreated };
 		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
