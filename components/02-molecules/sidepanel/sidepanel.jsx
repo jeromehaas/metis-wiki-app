@@ -26,10 +26,12 @@ const Sidepanel = () => {
 					<TextInput 
 						className="sidepanel__text-input" 
 						label={ note.dateCreated } 
-						value={ note.filename } 
+						value={ note.filename ? note.filename : '' } 
 						key={ note._id } 
 						onClick={ () => dispatch( setToActiveNote( note._id, note.filename, note.content, note.dateCreated ))}
 						onDelete={ () => dispatch( deleteNote( note._id )) }		
+						readOnly={ true }
+						onChange={ () => console.log('hello')}
 					/>
 					))}
 				</div>

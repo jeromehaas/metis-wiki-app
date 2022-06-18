@@ -64,11 +64,38 @@ const setToActiveNote = (id, filename, content, dateCreated) => async (dispatch)
 	};
 };
 
-const UPDATE_ACTIVE_NOTE = 'UPDATE_ACTIVE_NOTE';
-const updateActiveNote = () => async (dispatch) => {
+const UPDATE_ACTIVE_NOTE_FILENAME = 'UPDATE_ACTIVE_NOTE_FILENAME';
+const updateActiveNoteFilename = ( value ) => async (dispatch) => {
 	try {
-		const activeNotee = { id, filename, dateCreated };
-		dispatch({ type: UPDATE_ACTIVE_NOTE })
+		dispatch({ type: UPDATE_ACTIVE_NOTE_FILENAME, payload: value })
+	} catch (error) {
+		console.log(`🔴 Error: ${error.message}`);
+	};
+};
+
+const UPDATE_ACTIVE_NOTE_CONTENT = 'UPDATE_ACTIVE_NOTE_CONTENT';
+const updateActiveNoteContent = ( value ) => async (dispatch) => {
+	try {
+		dispatch({ type: UPDATE_ACTIVE_NOTE_CONTENT, payload: value });
+	} catch (error) {
+		console.log(`🔴 Error: ${error.message}`);
+	};
+};
+
+const SAVE_ACTIVE_NOTE = 'SAVE_ACTIVE_NOTE';
+const saveActiveNote = ( activeNote ) => async (dispatch) => {
+	try {
+		const { id,  filename, content } = activeNote;
+		const response = await fetch('http://localhost:3000/api/routes/notes/save', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ id: id, filename: filename, content: content })
+		});
+		const data = await response.json();
+		const notes = data.notes;
+		dispatch({ type: SAVE_ACTIVE_NOTE, payload: notes });
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	}
@@ -78,5 +105,8 @@ export {
 	getAllNotes,
 	createNote,
 	deleteActiveNote,
-	setToActiveNote
+	setToActiveNote,
+	updateActiveNoteFilename,
+	updateActiveNoteContent,
+	saveActiveNote
 };

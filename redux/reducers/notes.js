@@ -33,6 +33,32 @@ const notes = ( state = originalState, action ) => {
 			};
 			return originalState; 
 		};
+		case 'UPDATE_ACTIVE_NOTE_FILENAME': {
+			originalState = {
+				...state,
+				active: {
+					...state.active,
+					filename: action.payload
+				}
+			};
+			return originalState;
+		};
+		case 'UPDATE_ACTIVE_NOTE_CONTENT': {
+			originalState = {
+				...state,
+				active: {
+					...state.active,
+					content: action.payload
+				}
+			};
+			return originalState;
+		};
+		case 'SAVE_ACTIVE_NOTE':  {
+			originalState = {
+				...state, 
+				all: action.payload
+			}
+		};
 		default: {
 			return originalState;
 		};

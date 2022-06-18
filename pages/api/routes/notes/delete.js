@@ -11,6 +11,6 @@ export default async function createNotes(req, res) {
 		res.send({ notes });
 	} catch (error) {
 		console.log(error.message);
-	}
+	};
 
 };
