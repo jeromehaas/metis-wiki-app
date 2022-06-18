@@ -28,7 +28,7 @@ const Sidepanel = () => {
 						label={ note.dateCreated } 
 						value={ note.filename } 
 						key={ note._id } 
-						onClick={ () => dispatch( setToActiveNote( note._id, note.filename, note.dateCreated ))}
+						onClick={ () => dispatch( setToActiveNote( note._id, note.filename, note.content, note.dateCreated ))}
 						onDelete={ () => dispatch( deleteNote( note._id )) }		
 					/>
 					))}

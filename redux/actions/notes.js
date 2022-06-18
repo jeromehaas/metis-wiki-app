@@ -19,7 +19,6 @@ const getAllNotes = () => async (dispatch) => {
 
 const CREATE_NOTE = 'CREATE_NOTE';
 const createNote = () => async (dispatch) => {
-
 	try {
 		const date = moment().format('DD-MM-YYYY');
 		const response = await fetch('http://localhost:3000/api/routes/notes/create', {
@@ -27,7 +26,7 @@ const createNote = () => async (dispatch) => {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ filename: 'untitled.md', dateCreated: date })
+			body: JSON.stringify({ filename: 'untitled.md', content: '', dateCreated: date })
 		});
 		const data = await response.json();
 		const notes = data.notes;
@@ -37,8 +36,8 @@ const createNote = () => async (dispatch) => {
 	};
 };
 
-const DELETE_NOTE = 'DELETE_NOTE';
-const deleteNote = (id) => async (dispatch) => {
+const DELETE_ACTIVE_NOTE = 'DELETE_ACTIVE_NOTE';
+const deleteActiveNote = (id) => async (dispatch) => {
 	try {
 		const response = await fetch('http://localhost:3000/api/routes/notes/delete', {
 			method: 'DELETE',
@@ -49,17 +48,27 @@ const deleteNote = (id) => async (dispatch) => {
 		});
 		const data = await response.json();
 		const notes = data.notes;
-		dispatch({ type: DELETE_NOTE, payload: notes });
+		dispatch({ type: DELETE_ACTIVE_NOTE, payload: notes });
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	};
 };
 
 const SET_TO_ACTIVE_NOTE = 'SET_TO_ACTIVE_NOTE';
-const setToActiveNote = (id, filename, dateCreated) => async (dispatch) => {
+const setToActiveNote = (id, filename, content, dateCreated) => async (dispatch) => {
 	try {
-		const activeNote = { id, filename, dateCreated };
+		const activeNote = { id, filename, content, dateCreated };
 		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+	} catch (error) {
+		console.log(`🔴 Error: ${error.message}`);
+	};
+};
+
+const UPDATE_ACTIVE_NOTE = 'UPDATE_ACTIVE_NOTE';
+const updateActiveNote = () => async (dispatch) => {
+	try {
+		const activeNotee = { id, filename, dateCreated };
+		dispatch({ type: UPDATE_ACTIVE_NOTE })
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	}
@@ -68,6 +77,6 @@ const setToActiveNote = (id, filename, dateCreated) => async (dispatch) => {
 export {
 	getAllNotes,
 	createNote,
-	deleteNote,
+	deleteActiveNote,
 	setToActiveNote
 };

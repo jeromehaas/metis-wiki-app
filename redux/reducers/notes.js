@@ -19,7 +19,7 @@ const notes = ( state = originalState, action ) => {
 			};
 			return originalState; 
 		};
-		case 'DELETE_NOTE': {
+		case 'DELETE_ACTIVE_NOTE': {
 			originalState = {
 				...state, 
 				all: action.payload

@@ -6,7 +6,7 @@ import { Icon } from 'components/01-atoms/icon/icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { toggleMenu } from 'redux/actions/menu';
-import { deleteNote } from 'redux/actions/notes/';
+import { deleteActiveNote } from 'redux/actions/notes/';
 
 const Header = () => {
 
@@ -23,7 +23,7 @@ const Header = () => {
 				label={ activeNote.dateCreated } 
 				value={ activeNote.filename }
 			/>
-      <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" onClick={ () => dispatch(deleteNote(activeNote.id) ) } />
+      <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" onClick={ () => dispatch(deleteActiveNote(activeNote.id) ) } />
       <Button className="header__button button--hide-text-on-small" symbol="save">Save Changes</Button>
     </div>
   );

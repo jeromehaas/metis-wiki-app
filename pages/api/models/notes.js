@@ -7,6 +7,10 @@ const notesSchema = new Schema(
 			required: true, 
 			unique: false
 		}, 
+		content: {
+			type: String,
+			required: false,
+		},
 		dateCreated: {
 			type: String,
 			required: true,
