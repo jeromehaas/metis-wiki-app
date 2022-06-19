@@ -17,7 +17,7 @@ const DialogBox = ({ className }) => {
                 return (
                     <div className="dialog-box__box box">
                         <Heading className="box__heading" type="h3">Delete this document?</Heading>
-                        <Text className="box__text">This action is irreversible!</Text>
+                        <Text className="box__text">Are you sure you want to delete the ‘{ activeNote.filename }’ document and its contents? This action cannot be reversed.</Text>
                         <Button className="box__button" onClick={ () => { 
                             dispatch(deleteActiveNote(activeNote.id));
                             dispatch(hideDialogBox())

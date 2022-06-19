@@ -11,6 +11,7 @@ const Sidepanel = () => {
 
 	const dispatch = useDispatch();
 	const notes = useSelector( state => state.notes );
+	const activeNote = useSelector( state => state.notes.active );
 
 	useEffect(() => {
 		dispatch( getAllNotes() );
@@ -25,7 +26,7 @@ const Sidepanel = () => {
 				<div className="sidepanel__notes">
 				{ notes.all.map(( note ) => (
 					<TextInput 
-						className="sidepanel__text-input" 
+						className={` sidepanel__text-input  ${ activeNote.id === note._id ? 'text-input--active' : '' } text-input--read-only `}
 						label={ note.dateCreated } 
 						value={ note.filename ? note.filename : '' } 
 						key={ note._id } 

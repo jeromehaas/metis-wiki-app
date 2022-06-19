@@ -52,4 +52,12 @@ grid-template-columns: auto 1fr;
 
   }
 
+  &--read-only {
+
+    & .text-input__input:focus {
+      cursor: pointer !important;
+      border-bottom: 0;
+    }
+  }
+
 }    

@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { toggleTheme } from 'redux/actions/theme';
 
-export default function HomePage() {
+export default function DashboardPage() {
 
 	const dispatch = useDispatch();
 	const theme = useSelector(state => state.theme.active );
 
  	 return (
 		<div className={`page page--${ theme }`}>
-			Here comes the login....
+    	<Dashboard />
 		</div>
 	  );
 

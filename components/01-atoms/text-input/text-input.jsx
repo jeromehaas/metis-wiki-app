@@ -7,7 +7,7 @@ const TextInput = ({ className, label, value, onDelete, onClick, onChange, readO
     <div className={`text-input ${className ? className : ''}`} onClick={ onClick } >
       <Icon symbol="file" className="text-input__icon icon--white icon--file" />
       <label className="text-input__label">{label ? label : ''}</label>
-      <input type="text" className="text-input__input" value={ value } onChange={ onChange } readOnly={ readOnly } />
+      <input type="text" className="text-input__input" spellCheck={false} value={ value } onChange={ onChange } readOnly={ readOnly } />
 			<Icon  symbol="close" className="text-input__icon icon--white icon--close" onClick={ onDelete } />
     </div >
   )
