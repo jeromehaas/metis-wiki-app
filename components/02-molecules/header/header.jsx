@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { toggleMenu } from 'redux/actions/menu';
 import { deleteActiveNote, updateActiveNoteFilename, saveActiveNote } from 'redux/actions/notes/';
+import { showDialogBoxDeleteNote } from 'redux/actions/dialog-box';
 
 const Header = () => {
 
@@ -24,7 +25,7 @@ const Header = () => {
 				value={ activeNote.filename ? activeNote.filename : '' }
         onChange={ (event) => dispatch( updateActiveNoteFilename(event.target.value ) )}
 			/>
-      <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" onClick={ () => dispatch(deleteActiveNote(activeNote.id) ) } />
+      <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" onClick={ () => dispatch(showDialogBoxDeleteNote() ) } />
       <Button className="header__button button--hide-text-on-small" symbol="save" onClick={ () => dispatch(saveActiveNote(activeNote))} >Save Changes</Button>
     </div>
   );

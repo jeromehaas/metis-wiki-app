@@ -5,9 +5,7 @@ const getAllNotes = () => async (dispatch) => {
 	try {
 		const response = await fetch('http://localhost:3000/api/routes/notes/get', {
 			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json'
-			}
+			headers: { 'Content-Type': 'application/json' }
 		});
 		const data = await response.json();
 		const notes = data.notes;
@@ -23,9 +21,7 @@ const createNote = () => async (dispatch) => {
 		const date = moment().format('DD-MM-YYYY');
 		const response = await fetch('http://localhost:3000/api/routes/notes/create', {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ filename: 'untitled.md', content: '', dateCreated: date })
 		});
 		const data = await response.json();
@@ -41,9 +37,7 @@ const deleteActiveNote = (id) => async (dispatch) => {
 	try {
 		const response = await fetch('http://localhost:3000/api/routes/notes/delete', {
 			method: 'DELETE',
-			headers: {
-				'Content-Type': 'application/json',
-			},
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ id: id })
 		});
 		const data = await response.json();
@@ -57,8 +51,18 @@ const deleteActiveNote = (id) => async (dispatch) => {
 const SET_TO_ACTIVE_NOTE = 'SET_TO_ACTIVE_NOTE';
 const setToActiveNote = (id, filename, content, dateCreated) => async (dispatch) => {
 	try {
-		const activeNote = { id, filename, content, dateCreated };
-		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+		if (id !== undefined) {
+			const activeNote = { id, filename, content, dateCreated };
+			dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+		} else {
+			const response = await fetch('http://localhost:3000/api/routes/notes/get', {
+				method: 'GET',
+				headers: { 'Content-Type': 'application/json' }
+			});
+			const data = await response.json();
+			const activeNote = data.notes[0];
+			dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+		};
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	};
@@ -88,9 +92,7 @@ const saveActiveNote = ( activeNote ) => async (dispatch) => {
 		const { id,  filename, content } = activeNote;
 		const response = await fetch('http://localhost:3000/api/routes/notes/save', {
 			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json',
-			},
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ id: id, filename: filename, content: content })
 		});
 		const data = await response.json();

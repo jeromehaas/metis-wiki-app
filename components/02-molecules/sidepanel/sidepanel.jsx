@@ -13,7 +13,8 @@ const Sidepanel = () => {
 	const notes = useSelector( state => state.notes );
 
 	useEffect(() => {
-		dispatch( getAllNotes() )
+		dispatch( getAllNotes() );
+		dispatch( setToActiveNote() );
 	}, []);
 
   return (
