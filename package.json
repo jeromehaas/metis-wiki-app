@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^1.8.2",
     "@svgr/webpack": "^6.2.1",
     "@uiw/react-codemirror": "^4.8.1",
+    "js-cookie": "^3.0.1",
     "markdown-it": "^13.0.1",
     "marked": "^4.0.17",
     "moment": "^2.29.3",

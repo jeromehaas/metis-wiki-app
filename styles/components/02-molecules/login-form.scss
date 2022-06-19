@@ -1,0 +1,99 @@
+.login-form {
+	background-image: linear-gradient($orange-60, $orange-100);
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: relative;
+	height: 100vh; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+
+	&__wrapper {
+		background-color: $light-100;
+		padding: 48px;
+		border-radius: 20px;
+		opacity: 0.9;
+	}
+	
+	&__dial-wrapper {
+		display: grid;
+		grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+		grid-gap: 16px;
+		margin-bottom: 16px;
+	}
+
+	&__dial-button {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background-color: $light-60;
+		border: 2px solid $light-100;
+		color: $orange-100;
+		font-size: 25px;
+		transition: all 0.1s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			 background-color: darken($light-60, 5%);
+		}
+
+        &:last-child {
+            justify-self: center;
+            grid-column: span 3;
+        }
+
+		&--reset {
+			
+			svg {
+				width: 50%;
+				height: 50%;
+			}
+			
+			* {
+				 fill: $dark-100 !important;
+			}
+
+		}
+		
+		&--back {
+			
+			svg {
+				width: 50%;
+				height: 50%;
+			}
+			
+			* {
+				 fill: $light-100 !important;
+			}
+		}
+
+	}
+
+	&__dots-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	&__dot {
+		width: 10px;
+		height: 10px;
+		border: 2px solid $light-60;
+		margin: 5px;
+		border-radius: 50%;
+
+		&--active {
+			background-color: $light-60;
+		}
+
+	}
+
+}
