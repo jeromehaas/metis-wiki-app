@@ -17,14 +17,10 @@
 
   .editor {
     grid-area: editor;
-		background-color: $dark-100;
-		transition: all 0.1s ease;
   }
   
   .preview {
     grid-area: preview;
-		background-color: $dark-100;
-		transition: all 0.1s ease;
   }
 
 	&--hide-menu {

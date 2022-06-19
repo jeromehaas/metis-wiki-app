@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllNotes } from 'redux/actions/notes';
 import { toggleMenu } from 'redux/actions/menu';
 import { Editor } from 'components/02-molecules/editor/editor';
+import { Preview } from 'components/02-molecules/preview/preview';
 
 const Dashboard = () => {
 
@@ -16,7 +17,7 @@ const Dashboard = () => {
       <Header />
       <Sidepanel />
 			<Editor />
-      <div className="preview"></div>
+      <Preview />
     </div>
   );
 

@@ -1,5 +1,119 @@
 .preview {
+	grid-area: preview;
+	background-color:  $light-100;
 	width: 100%;
 	max-width: 100%;
 	min-width: 100%;
+
+	&__inner {
+ 	   padding: 24px;
+	   height: 100vh;
+	   overflow-y: scroll;
+	}
+
+	h1, h2, h3, h4, h5, h6, p, ol, ul, pre, blockquote {
+		margin-bottom: 24px;
+	}
+
+	ul li, 
+	ol li {
+		margin-bottom: 12px;
+		color: $light-20;
+	}
+
+	p, li {
+		line-height: 2;
+	}
+
+
+	ul {
+		list-style: none; 
+		
+		li {
+			
+			&::before {
+				content: '•';
+				color: $orange-100;
+				margin-left: -16px;
+				display: inline-block;
+				width: 16px;
+			}
+			
+		}
+			
+	}
+
+	p {
+		color: $light-20;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: underline 1px solid black;
+		font-weight: inherit;
+		text-underline-position: from-font;
+	}
+
+
+	h1 {
+		font-size: 32px;
+		font-weight: 700;
+	}
+
+	h2 {
+		font-size: 28px;
+		font-weight: 300;
+	}
+
+	h3 {
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	h4 {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	h5 {
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	h6 {
+		font-size: 14px;
+		font-weight: 700;
+		color: $orange-100;
+	}
+
+
+	li {
+		margin-left: 32px;
+	}
+
+	pre {
+		background-color: $light-80;
+		padding: 16px;
+		line-height: 2;
+	}
+
+	blockquote {
+		background-color: $light-80;
+		padding: 16px;
+		line-height: 2;
+		border-left: 2px solid $orange-100;
+		border-radius: 4px;
+
+		p {
+			margin-bottom: 0;
+			font-weight: 700;
+			color: $dark-100;
+		}
+
+	}
+
+	code  {
+		color: $orange-100;
+	}
+
 }

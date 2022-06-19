@@ -12,7 +12,7 @@ const Editor = () => {
 
 	return (
 		<div className="editor">
-			<textarea name="editor" id="editor" cols="30" rows="10" value={ activeNote.content } onChange={ (event) => dispatch( updateActiveNoteContent(event.target.value)) }></textarea>
+			<textarea className="editor__textarea" cols="30" rows="10" value={ activeNote.content } onChange={ (event) => dispatch( updateActiveNoteContent(event.target.value)) }></textarea>
 		</div>
 	);
 
