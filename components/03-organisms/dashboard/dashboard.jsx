@@ -6,6 +6,8 @@ import { getAllNotes } from 'redux/actions/notes';
 import { toggleMenu } from 'redux/actions/menu';
 import { Editor } from 'components/02-molecules/editor/editor';
 import { Preview } from 'components/02-molecules/preview/preview';
+import  { DialogBox } from 'components/02-molecules/dialog-box/dialog-box';
+import { Fragment } from 'react';
 
 const Dashboard = () => {
 
@@ -14,12 +16,15 @@ const Dashboard = () => {
   const previewFocus = useSelector( state => state.preview.focus );
 
   return (
-    <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''} ${ previewFocus === true ? 'dashboard--preview-focus' : ''}`}>
-      <Header />
-      <Sidepanel />
-			<Editor />
-      <Preview />
-    </div>
+    <Fragment>
+      <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''} ${ previewFocus === true ? 'dashboard--preview-focus' : ''}`}>
+        <Header />
+        <Sidepanel />
+			  <Editor />
+        <Preview />
+      </div>
+      <DialogBox className="dashboard__dialog-box" />
+    </Fragment>
   );
 
 };
