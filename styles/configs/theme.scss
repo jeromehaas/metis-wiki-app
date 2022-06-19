@@ -1,6 +1,6 @@
 .page {
 
-	&--light {
+	&--dark {
 	
 		.dashboard {
 
@@ -24,18 +24,64 @@
 				transition: all 0.1s ease;
 		
 				&--moon {
-					color: $dark-20;
+					color: $light-40;
 				}
 				
 				&--sun {
-					color: $light-40;
+					color: $dark-20;
 				}
 		
 			}
 
+			.switch__background .switch__toggle{
+				right: calc(100% - (14px + 6px)) !important;
+				-webkit-transition: all 0.2s ease;
+				transition: all 0.2s ease;
+			}
+
 		}
 
-	}
+		.editor {
+			
+			&__textarea {
+				background-color: $dark-100 !important;
+				color: $light-40;
+			}
 
+		}
+
+		.preview {
+			
+			&__content {
+				background-color: $dark-100 !important;
+				color: $light-40;
+
+				 
+	   			h1, h2, h3, h4, h5, h6, p, ol, ul, pre, blockquote {
+		   			margin-bottom: 24px;
+		   			color: $light-40;
+				}
+
+				a {
+					text-decoration: underline 1px solid $light-40;
+				}
+
+				pre {
+					background-color: $dark-60;
+				}
+
+				blockquote {
+					background-color: $dark-60;
+					}
+
+				}
+
+			}
+
+			.tag {
+				background-color: $dark-80;
+			}
+
+		}
 
 }

@@ -6,21 +6,22 @@
   
   &__icon, .icon {
 		transition: all 0.1s ease;
+		cursor: pointer;
 
 		&--moon {
-			color: $light-40;
-		}
-
-		&--sun {
 			color: $dark-20;
+		}
+		
+		&--sun {
+			color: $light-40;
 		}
 
   }
   
 	&__switch, .switch {
 		position: relative;
-	  width:48px;
-	  height: 24px;
+	  	width:48px;
+	  	height: 24px;
 
 		&__input {
 			top: 0;
@@ -53,7 +54,7 @@
 			height: 12px;
 			width: 12px;
 			position: absolute;
-			left: 4px;
+			right: 8px;
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 2;
@@ -64,13 +65,7 @@
 		}
 
 
-		&__input:checked + .switch__background .switch__toggle{
-			left: auto;
-			left: calc(100% - (14px + 6px));
-			-webkit-transition: all 0.2s ease;
-			transition: all 0.2s ease;
-		}
-
 	}
+
 
 }

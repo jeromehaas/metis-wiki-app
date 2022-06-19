@@ -1,24 +1,25 @@
 .preview {
 	grid-area: preview;
-	background-color:  $light-100;
 	width: 100%;
 	max-width: 100%;
 	min-width: 100%;
-
-
-	&__editor {
+	
+	
+	&__content {
+	   background-color:  $light-100;
  	   padding: 24px;
 	   height: calc(100vh - 40px - 72px);
 	   overflow-y: scroll;
+	   transition: all 0.1s ease;
 	   
 	   h1, h2, h3, h4, h5, h6, p, ol, ul, pre, blockquote {
-		margin-bottom: 24px;
-	}
+		   margin-bottom: 24px;
+		   color: $dark-40;
+		}
 
 	ul li, 
 	ol li {
 		margin-bottom: 12px;
-		color: $light-20;
 	}
 
 	p, li {
@@ -43,13 +44,11 @@
 			
 	}
 
-	p {
-		color: $light-20;
-	}
+
 
 	a {
 		color: inherit;
-		text-decoration: underline 1px solid black;
+		text-decoration: underline 1px solid $dark-40;
 		font-weight: inherit;
 		text-underline-position: from-font;
 	}
@@ -95,6 +94,7 @@
 		background-color: $light-80;
 		padding: 16px;
 		line-height: 2;
+		border-radius: 4px;
 	}
 
 	blockquote {
@@ -107,14 +107,11 @@
 		p {
 			margin-bottom: 0;
 			font-weight: 700;
-			color: $dark-100;
 		}
 
 	}
 
-	code  {
-		color: $dark-100;
-	}
+
 }
 
 }

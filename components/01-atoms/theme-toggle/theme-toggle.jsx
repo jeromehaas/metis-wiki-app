@@ -11,9 +11,9 @@ const ThemeToggle = ({ className, onClick }) => {
   return (
     <div className={`theme-toggle theme-toggle--${ theme } ${className ? className : ''}`} onClick={() => dispatch(toggleTheme() )}>
       <Icon className="theme-toggle__icon icon--moon" />
-      <span className="theme-toggle__switch switch" onClick={onClick}>
-        <input className="switch__input" type="checkbox" name="range" id="range" />
-        <label className="switch__background" htmlFor="range"><i className="switch__toggle"></i></label>
+      <span className="theme-toggle__switch switch" >
+        <div className="switch__input"></div>
+        <div className="switch__background"><i className="switch__toggle"></i></div>
       </span>
       <Icon className="theme-toggle__icon icon--sun" />
     </div>
