@@ -32,4 +32,15 @@
 
 	}
 
+  &--preview-focus {
+    grid-template-areas:
+      "sidepanel header header"
+      "sidepanel preview preview";
+      
+      .editor {
+        display: none;
+      }
+      
+    }
+    
 }

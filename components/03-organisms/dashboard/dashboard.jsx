@@ -11,9 +11,10 @@ const Dashboard = () => {
 
 	const activeNote = useSelector( state => state.notes.active);
 	const currentStatus = useSelector( state => state.menu.status);
+  const previewFocus = useSelector( state => state.preview.focus );
 
   return (
-    <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''}`}>
+    <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''} ${ previewFocus === true ? 'dashboard--preview-focus' : ''}`}>
       <Header />
       <Sidepanel />
 			<Editor />

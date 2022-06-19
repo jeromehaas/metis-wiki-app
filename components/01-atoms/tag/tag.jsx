@@ -6,7 +6,7 @@ const Tag = ({ text, icon, onClick }) => {
     return (
         <div className="tag">
             <Text className="tag__text">{ text }</Text>
-            { icon  && ( <Icon className="header__delete-icon icon--grey icon--extrasmall" symbol="eye" onClick={ onClick } /> )}
+            { icon  && ( <Icon className="header__delete-icon icon--grey icon--extrasmall" symbol={ icon } onClick={ onClick } /> )}
         </div>
     );
 
