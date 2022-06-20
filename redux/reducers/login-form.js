@@ -1,5 +1,5 @@
 const originalState = {
-    input: ''
+    input: '',
 };
 
 const loginForm = ( state = originalState, action) =>  {

@@ -22,11 +22,12 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
         const response = await fetch('http://localhost:3000/api/routes/users/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code: code})
+            body: JSON.stringify({ code: code })
         });
+        if (response.status === 400) throw new Error('user not found');
         const data = await response.json();
-        console.log(data);
-        dispatch({ type: SUBMIT_LOGIN_FORM });
+        dispatch({ type: 'START_SESSION', payload: data });
+        console.log('data', data);
     } catch (error)  {
 		console.log(`🔴 Error: ${error.message}`);
     }
@@ -35,4 +36,5 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
 export {
     updateLoginFormInput, 
     resetLoginFormInput,
+    submitLoginForm,
 };

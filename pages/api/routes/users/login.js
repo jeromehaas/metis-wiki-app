@@ -1,5 +1,6 @@
 import connectDatabase from 'pages/api/configs/connectDatabase';
 import Users from 'pages/api/models/users';
+import jwt from 'jsonwebtoken';
 
 export default async function loginUser(req, res) {
 
@@ -7,10 +8,17 @@ export default async function loginUser(req, res) {
         await connectDatabase();
         console.log(req.body);
         const { code } = req.body;
-        const users = await Users.findOne({ code: code });
-        res.status(200).send(users)
+        const user = await Users.findOne({ code: code });
+        const username = user.username;
+        const sessionToken = jwt.sign({ code: code }, process.env.JWT_SALT_HASH, { expiresIn: '2h' } )
+        if (!user) throw new Error('user not found');
+        res.status(200).send({
+            username: username,
+            sessionToken: sessionToken
+        });
     } catch (error) {
-		console.log(error.message);
-        res.status(400).send(error.message);
+        const errorMessage = `🔴 Error: ${error.message}`;
+		console.log(errorMessage);
+        res.status(400).send({ errorMessage: errorMessage });
     };
 };

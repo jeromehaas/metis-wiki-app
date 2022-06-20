@@ -5,6 +5,7 @@ import menu from 'redux/reducers/menu';
 import preview from 'redux/reducers/preview';
 import dialogBox from 'redux/reducers/dialog-box';
 import loginForm from 'redux/reducers/login-form';
+import session from "redux/reducers/session";
 
 const rootReducer = combineReducers({
 	notes,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
 	menu,
 	preview,
 	dialogBox,
-	loginForm
+	loginForm,
+	session
 });
 
 export default rootReducer;
