@@ -19,11 +19,11 @@ const LoginForm = () => {
     }
   }, [loginForm]);
 
-  useEffect(() => {
-    if (session.isLoggedIn) {
-      router.push('/dashboard');
-    }
-  }, [session]);
+    useEffect(() => {
+      if (session.isLoggedIn) {
+        router.push('/dashboard');
+      }
+    }, [session]);
 
   return (
     <div className="login-form">

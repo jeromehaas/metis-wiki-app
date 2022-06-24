@@ -14,6 +14,15 @@ const session = ( state = originalState, action) => {
             };
             return originalState;
         };
+        case 'VALIDATE_SESSION': {
+            originalState =  {
+                ...state,
+               isLoggedIn: action.payload.isLoggedIn,
+               username: action.payload.username,
+               sessiontoken: action.payload.sessionToken 
+            };
+        };
+
         default: {
             return originalState;
         };

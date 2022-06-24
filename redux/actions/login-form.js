@@ -1,3 +1,5 @@
+import cookies from 'js-cookie';
+
 const UPDATE_LOGIN_FORM_INPUT = 'UPDATE_LOGIN_FORM_INPUT';
 const updateLoginFormInput = ( value ) => async ( dispatch ) => {
     try {
@@ -26,8 +28,8 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
         });
         if (response.status === 400) throw new Error('user not found');
         const data = await response.json();
+
         dispatch({ type: 'START_SESSION', payload: data });
-        console.log('data', data);
     } catch (error)  {
 		console.log(`🔴 Error: ${error.message}`);
     }
