@@ -35,7 +35,7 @@ const createNote = () => async (dispatch) => {
 const DELETE_ACTIVE_NOTE = 'DELETE_ACTIVE_NOTE';
 const deleteActiveNote = (id) => async (dispatch) => {
 	try {
-		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}s/api/routes/notes/delete`, {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}(/api/routes/notes/delete`, {
 			method: 'DELETE',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ id: id })
