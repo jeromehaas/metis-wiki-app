@@ -17,7 +17,7 @@ const Preview = () => {
             <div className="preview__content">
                 <ReactMarkdown>
                     { activeNote.content }
-                </ReactMarkdown>s
+                </ReactMarkdown>
             </div>
         </div>
     );
