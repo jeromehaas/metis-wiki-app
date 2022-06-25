@@ -3,7 +3,7 @@ import moment from 'moment';
 const GET_ALL_NOTES = 'GET_ALL_NOTES';
 const getAllNotes = () => async (dispatch) => {
 	try {
-		const response = await fetch('http://localhost:3000/api/routes/notes/get', {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/get`, {
 			method: 'GET',
 			headers: { 'Content-Type': 'application/json' }
 		});
@@ -19,7 +19,7 @@ const CREATE_NOTE = 'CREATE_NOTE';
 const createNote = () => async (dispatch) => {
 	try {
 		const date = moment().format('DD-MM-YYYY');
-		const response = await fetch('http://localhost:3000/api/routes/notes/create', {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/create`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ filename: 'untitled.md', content: '', dateCreated: date })
@@ -35,7 +35,7 @@ const createNote = () => async (dispatch) => {
 const DELETE_ACTIVE_NOTE = 'DELETE_ACTIVE_NOTE';
 const deleteActiveNote = (id) => async (dispatch) => {
 	try {
-		const response = await fetch('http://localhost:3000/api/routes/notes/delete', {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}s/api/routes/notes/delete`, {
 			method: 'DELETE',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ id: id })
@@ -55,7 +55,7 @@ const setToActiveNote = (id, filename, content, dateCreated) => async (dispatch)
 			const activeNote = { id, filename, content, dateCreated };
 			dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
 		} else {
-			const response = await fetch('http://localhost:3000/api/routes/notes/get', {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/get`, {
 				method: 'GET',
 				headers: { 'Content-Type': 'application/json' }
 			});
@@ -90,7 +90,7 @@ const SAVE_ACTIVE_NOTE = 'SAVE_ACTIVE_NOTE';
 const saveActiveNote = ( activeNote ) => async (dispatch) => {
 	try {
 		const { id,  filename, content } = activeNote;
-		const response = await fetch('http://localhost:3000/api/routes/notes/save', {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/save`, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ id: id, filename: filename, content: content })
