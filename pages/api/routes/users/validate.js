@@ -12,7 +12,6 @@ export default async function validateUser(req, res) {
         const user = await Users.findOne({ code: code });
         const username = user.username;
         if (!user.username) throw new Error('user not found');
-        console.log(user);
         res.status(200).send({
             username: username,
             sessionToken: sessionToken

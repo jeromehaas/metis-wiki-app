@@ -9,7 +9,7 @@
     "sidepanel editor preview";
   grid-template-rows: 72px auto;
   grid-template-columns: 250px 1fr 1fr;
-	transition: all 0.3s ease;
+	transition: all 0s ease;
 
   .header {
     grid-area: header;
@@ -24,10 +24,10 @@
   }
 
 	&--hide-menu {
-		grid-template-columns: 0px 1fr 1fr;
+		grid-template-columns: 0 1fr 1fr;
 		
-		.sidepanel {
-			left: -250px;
+		.sidepanel, .editor, .preview {
+			left: -250px !important;
 		}
 
 	}
@@ -36,11 +36,53 @@
     grid-template-areas:
       "sidepanel header header"
       "sidepanel preview preview";
-      
+
       .editor {
         display: none;
       }
-      
+
     }
+
+   @media (max-width: 800px) {
+      grid-template-areas:
+        "sidepanel header"
+        "sidepanel editor";
+      grid-template-rows: 72px auto;
+      grid-template-columns: 250px calc(100vw - 250px);
+
+      .preview {
+        display: none;
+      }
+
+      .editor {
+        display: block;
+      }
+
+
+	    &--hide-menu {
+		    grid-template-columns: 0 100vw;
     
+		    .sidepanel, .editor, .preview {
+			    left: -250px !important;
+		    }
+
+	    }
+
+      &--preview-focus {
+        grid-template-areas:
+          "sidepanel header"
+          "sidepanel preview";
+
+          & .preview {
+            display: block;
+          }
+
+          & .editor {
+            display: none;
+          }
+    }
+
+
+   } 
+
 }

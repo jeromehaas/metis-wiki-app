@@ -2,7 +2,7 @@
   padding: 0;
   display: inline-block;
   transition-property: opacity, filter;
-  transition-duration: 0s;
+  transition-duration: 0.3s;
   font: inherit;
   color: inherit;
   text-transform: none;
@@ -12,10 +12,6 @@
   overflow: visible;
   cursor: pointer;
 
-	&:hover,
-	&--active:hover { 
-		opacity: 0.7; 
-	}	
 	
 	&__box {
 		width: 20px;

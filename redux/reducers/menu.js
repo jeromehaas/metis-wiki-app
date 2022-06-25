@@ -1,5 +1,5 @@
 let originalState = {
-	status: 'visible'
+	status: 'hidden'
 };
 
 const menu = ( state = originalState, action) => {

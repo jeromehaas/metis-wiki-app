@@ -8,7 +8,7 @@ export default async function getNotes(req, res) {
 		const notes = await Notes.find();
 		res.json({ notes });
 	} catch (error) {
-		console.log(error.message);
+		console.log(`🔴 Error: ${error.message}`);
 	}
 
 };

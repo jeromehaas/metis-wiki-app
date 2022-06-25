@@ -13,7 +13,7 @@ export default async function saveNote(req, res) {
         const notes = await Notes.find();
         res.send({ notes });
     } catch (error) {
-		console.log(error.message);
+		console.log(`🔴 Error: ${error.message}`);
     };
     
 };

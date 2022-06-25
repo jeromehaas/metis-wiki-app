@@ -33,7 +33,6 @@ const Sidepanel = () => {
 						onClick={ () => dispatch( setToActiveNote( note._id, note.filename, note.content, note.dateCreated ))}
 						onDelete={ () => dispatch( deleteNote( note._id )) }		
 						readOnly={ true }
-						onChange={ () => console.log('')}
 					/>
 					))}
 				</div>

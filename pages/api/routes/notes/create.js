@@ -10,7 +10,7 @@ export default async function createNotes(req, res) {
 		const notes = await Notes.find();
 		res.send({ notes });
 	} catch (error) {
-		console.log(error.message);
+		onsole.log(`🔴 Error: ${error.message}`);
 	}
 
 };
