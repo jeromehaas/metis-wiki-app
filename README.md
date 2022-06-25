@@ -17,3 +17,7 @@ nvm use
 npm install 
 npm run dev
 ```
+
+### Login
+The code to login is: 
+123456
