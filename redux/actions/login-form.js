@@ -30,7 +30,7 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
         const data = await response.json();
         dispatch({ type: 'START_SESSION', payload: data });
     } catch (error)  {
-		console.log(`🔴 Error here: ${error.message}`);
+		console.log(`🔴 Error: ${error.message}`);
     }
 }
 
