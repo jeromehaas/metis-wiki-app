@@ -1,13 +1,9 @@
-# FrontendMentor Challenge | Markdown Editor
+# Metis Wiki App
 
-This is a challenge from FrontendMentor.   
-You can find the description of the task here:   
-[frontendmentor.io](https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9)
+With metis, you can manage your notes and store them in your Mongo Atlas database.
 
 <img src="public/readme/preview.png" width="700" style="margin: 20px 0" />
 
-My goal in this challenge was to:
-- setup a login-system with NextJS
 
 ### How to run
 ```bash
@@ -17,7 +13,3 @@ nvm use
 npm install 
 npm run dev
 ```
-
-### Login
-The code to login is: 
-123456
