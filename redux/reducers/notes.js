@@ -1,6 +1,10 @@
 let originalState = {
 	all: [],
-	active: {}
+	active: {
+		filename: '',
+		content: '',
+		_id: ''
+	}
 };
 
 const notes = ( state = originalState, action ) => {

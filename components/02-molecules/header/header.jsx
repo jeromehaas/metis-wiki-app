@@ -19,12 +19,13 @@ const Header = () => {
     <div className="header">
       <Hamburger className="header__hamburger" currentStatus={ currentStatus } onClick={ () => dispatch( toggleMenu(currentStatus) ) } />
       <Logo className="header__logo" />
-      <TextInput 
-				className="header__text-input" 
-				label={ activeNote.dateCreated } 
-				value={ activeNote.filename ? activeNote.filename : '' }
-        onChange={ (event) => dispatch( updateActiveNoteFilename(event.target.value ) )}
-			/>
+      {activeNote && (
+        <TextInput
+          className="header__text-input"
+          label={activeNote ? activeNote.dateCreated : ''}
+          value={activeNote ? activeNote.filename : ''}
+          onChange={(event) => dispatch(updateActiveNoteFilename(event.target.value))}
+        />)}
       <Icon className="header__delete-icon icon--grey icon--medium" symbol="trash" onClick={ () => dispatch(showDialogBoxDeleteNote() ) } />
       <Button className="header__button button--hide-text-on-small" symbol="save" onClick={ () => dispatch(saveActiveNote(activeNote))} >Save Changes</Button>
     </div>

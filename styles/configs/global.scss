@@ -18,3 +18,9 @@ body::-webkit-scrollbar {
 *::-webkit-scrollbar-thumb {
 	background: $dark-20; 
 }
+
+*::selection {
+    background-color: transparentize($purple-100, 0.0001);
+    color: $light-100;
+    opacity: 0.99;
+}

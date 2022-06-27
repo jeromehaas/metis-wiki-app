@@ -16,7 +16,7 @@ const Preview = () => {
             <Tag className="preview__tag" text="Preview" icon={ previewFocus === true ? 'eye-closed' : 'eye' } onClick={ () => dispatch( previewToggleFocus( previewFocus ) ) } />
             <div className="preview__content">
                 <ReactMarkdown>
-                    { activeNote.content }
+                    { activeNote ? activeNote.content : '' }
                 </ReactMarkdown>
             </div>
         </div>

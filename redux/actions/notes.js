@@ -19,14 +19,16 @@ const CREATE_NOTE = 'CREATE_NOTE';
 const createNote = () => async (dispatch) => {
 	try {
 		const date = moment().format('DD-MM-YYYY');
+		const note = { filename: 'untitled.md', content: '', dateCreated: date }
 		const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/create`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ filename: 'untitled.md', content: '', dateCreated: date })
+			body: JSON.stringify(note)
 		});
 		const data = await response.json();
 		const notes = data.notes;
 		dispatch({ type: CREATE_NOTE, payload: notes });
+		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: note })
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	};
