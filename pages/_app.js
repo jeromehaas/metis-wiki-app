@@ -8,6 +8,7 @@ function App({ Component, pageProps }) {
 		<Provider store={ store }>
 			<Head><title>Markdown Editor</title></Head>
 			<meta name="description" content="A challenge from FrontendMentor" />
+			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
         	<link rel="shortcut icon" href="/favicon.ico" />
 			<Component {...pageProps} />
 		</Provider>
