@@ -1,5 +1,5 @@
 .login-form {
-	background-image: linear-gradient($orange-60, $orange-100);
+	background-image: linear-gradient($purple-60, $purple-100);
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -34,7 +34,7 @@
 		border-radius: 50%;
 		background-color: $light-60;
 		border: 2px solid $light-100;
-		color: $orange-100;
+		color: $dark-100;
 		font-size: 25px;
 		transition: all 0.1s ease;
 		display: flex;
@@ -91,7 +91,7 @@
 		border-radius: 50%;
 
 		&--active {
-			background-color: $light-60;
+			background-color: $purple-100;
 		}
 
 	}

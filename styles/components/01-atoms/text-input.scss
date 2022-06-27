@@ -8,7 +8,7 @@ grid-template-columns: auto 1fr;
 
 
   &__icon, .icon {
-    color: $light-100;
+    color: $light-40;
 		align-self: center;
 		justify-content: center;
 		text-align: center;
@@ -31,18 +31,18 @@ grid-template-columns: auto 1fr;
   
   &__label {
     grid-area: label;
-    color: $light-20;
+    color: $dark-80;
   }
   
   &__input {
     grid-area: input;
     border: none;
     background-color: transparent;
-    color: $light-100;
+    color: $dark-100;
     padding: 4px 0;
-    caret-color: $orange-100;
+    caret-color: $purple-100;
     outline: none;
-    color: $light-100;
+    color: $dark-100;
 		cursor: pointer;
     
     &:focus {

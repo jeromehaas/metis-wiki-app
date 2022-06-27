@@ -1,6 +1,6 @@
 .button {
   padding: 8px 16px;
-  background-color: $orange-100;
+  background-color: $purple-100;
   color: $light-100;
   outline: none;
   border: none;
@@ -22,7 +22,7 @@
   }
 
   &:hover {
-    background-color: $orange-60
+    background-color: $purple-60
   }
 
   @media (max-width: 800px) {
