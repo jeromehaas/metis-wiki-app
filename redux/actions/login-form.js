@@ -1,10 +1,20 @@
 import cookies from 'js-cookie';
 
+const playSound = (type) => {
+  switch(type) {
+    case 'button-click': return new Audio('/media/sounds/button-click.mp3').play();
+    case 'success': return new Audio('/media/sounds/success.mp3').play();
+    case 'error': return new Audio('/media/sounds/error.mp3').play();
+    default: return new Audio('/media/sounds/button-click.mp3').play();
+  };
+};
+
 const UPDATE_LOGIN_FORM_INPUT = 'UPDATE_LOGIN_FORM_INPUT';
 const updateLoginFormInput = ( value ) => async ( dispatch ) => {
     try {
         dispatch({ type: UPDATE_LOGIN_FORM_INPUT, payload: value });
         dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'neutral' });
+        playSound('button-click');
     } catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
     };
@@ -15,7 +25,7 @@ const resetLoginFormInput = () => async ( dispatch ) => {
     try {
         dispatch({ type: RESET_LOGIN_FORM_INPUT });
     } catch (error)  {
-		console.log(`🔴 Error: ${error.message}`);
+		  console.log(`🔴 Error: ${error.message}`);
     };
 };
 
@@ -32,9 +42,11 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
         const data = await response.json();
         dispatch({ type: 'START_SESSION', payload: data });
         dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'success' });
+        playSound('success');
     } catch (error)  {
       dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'error' });
-		console.log(`🔴 Error: ${error.message}`);
+      playSound('error');
+		  console.log(`🔴 Error: ${error.message}`);
     }
 }
 

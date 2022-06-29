@@ -1,5 +1,14 @@
 import moment from 'moment';
 
+const playSound = (type) => {
+  switch(type) {
+    case 'button-click': return new Audio('/media/sounds/button-click.mp3').play();
+    case 'success': return new Audio('/media/sounds/success.mp3').play();
+    case 'error': return new Audio('/media/sounds/error.mp3').play();
+    default: return new Audio('/media/sounds/button-click.mp3').play();
+  };
+};
+
 const GET_ALL_NOTES = 'GET_ALL_NOTES';
 const getAllNotes = () => async (dispatch) => {
 	try {
@@ -29,6 +38,7 @@ const createNote = () => async (dispatch) => {
 		const notes = data.notes;
 		dispatch({ type: CREATE_NOTE, payload: notes });
 		dispatch({ type: SET_TO_ACTIVE_NOTE, payload: note })
+    playSound('button-click');
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	};
@@ -45,6 +55,7 @@ const deleteActiveNote = (id) => async (dispatch) => {
 		const data = await response.json();
 		const notes = data.notes;
 		dispatch({ type: DELETE_ACTIVE_NOTE, payload: notes });
+    playSound('error');
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	};
@@ -56,6 +67,7 @@ const setToActiveNote = (id, filename, content, dateCreated) => async (dispatch)
 		if (id !== undefined) {
 			const activeNote = { id, filename, content, dateCreated };
 			dispatch({ type: SET_TO_ACTIVE_NOTE, payload: activeNote });
+      playSound('button-click');
 		} else {
 			const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/notes/get`, {
 				method: 'GET',
@@ -99,7 +111,9 @@ const saveActiveNote = ( activeNote ) => async (dispatch) => {
 		});
 		const data = await response.json();
 		const notes = data.notes;
+    playSound('success');
 		dispatch({ type: SAVE_ACTIVE_NOTE, payload: notes });
+    playSound('success');
 	} catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
 	}
