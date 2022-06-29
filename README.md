@@ -7,8 +7,8 @@ With metis, you can manage your notes and store them in your Mongo Atlas databas
 
 ### How to run
 ```bash
-git clone https://github.com/jeromehaas/markdown-editor-fm
-cd markdown-editor-fm
+git clone https://github.com/jeromehaas/metis-wiki-app
+cd metis-wiki-app
 nvm use
 npm install 
 npm run dev

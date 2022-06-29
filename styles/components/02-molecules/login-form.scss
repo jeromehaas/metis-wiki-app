@@ -16,12 +16,17 @@
 
 	&__wrapper {
 		background-color: $light-100;
-		padding: 48px;
 		border-radius: 20px;
 		opacity: 0.9;
 	}
+
+  &__logo {
+    padding: 48px;
+    border-bottom: 1px solid $purple-100;
+  }
 	
 	&__dial-wrapper {
+    padding: 48px;
 		display: grid;
 		grid-template: repeat(4, 1fr) / repeat(3, 1fr);
 		grid-gap: 16px;
