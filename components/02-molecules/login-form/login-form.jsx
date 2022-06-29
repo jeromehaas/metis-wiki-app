@@ -42,7 +42,7 @@ const LoginForm = () => {
           <button className="login-form__dial-button" onClick={() => dispatch(updateLoginFormInput(loginForm.input + '9'))}>9</button>
           <button className="login-form__dial-button" onClick={() => dispatch(updateLoginFormInput(loginForm.input + '0'))}>0</button>
         </div>
-        <div className="login-form__dots-wrapper">
+        <div className={`login-form__dots-wrapper ${loginForm.status ? `login-form__dots-wrapper--${loginForm.status}` : ''}`}>
           <div className={`login-form__dot ${loginForm.input.length >= 1 ? 'login-form__dot--active' : ''}`}></div>
           <div className={`login-form__dot ${loginForm.input.length >= 2 ? 'login-form__dot--active' : ''}`}></div>
           <div className={`login-form__dot ${loginForm.input.length >= 3 ? 'login-form__dot--active' : ''}`}></div>

@@ -1,5 +1,6 @@
 const originalState = {
     input: '',
+    status: 'neutral'
 };
 
 const loginForm = ( state = originalState, action) =>  {
@@ -17,6 +18,13 @@ const loginForm = ( state = originalState, action) =>  {
                 input: ''
             };
             return originalState;
+        };
+        case 'SET_LOGIN_FORM_STATUS': {
+          originalState = {
+            ...state, 
+            status: action.payload
+          };
+          return originalState;
         }
         default: {
             return originalState;

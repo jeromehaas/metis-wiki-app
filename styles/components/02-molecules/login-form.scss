@@ -30,7 +30,6 @@
 		display: grid;
 		grid-template: repeat(4, 1fr) / repeat(3, 1fr);
 		grid-gap: 16px;
-		margin-bottom: 16px;
 	}
 
 	&__dial-button {
@@ -83,9 +82,16 @@
 	}
 
 	&__dots-wrapper {
+    padding: 0 48px 48px 48px;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+
+    &--error .login-form__dot { background-color: $red-100; }
+    &--success .login-form__dot { background-color: $green-100; }
+
+    
+
 	}
 
 	&__dot {

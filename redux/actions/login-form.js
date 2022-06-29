@@ -4,6 +4,7 @@ const UPDATE_LOGIN_FORM_INPUT = 'UPDATE_LOGIN_FORM_INPUT';
 const updateLoginFormInput = ( value ) => async ( dispatch ) => {
     try {
         dispatch({ type: UPDATE_LOGIN_FORM_INPUT, payload: value });
+        dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'neutral' });
     } catch (error) {
 		console.log(`🔴 Error: ${error.message}`);
     };
@@ -21,6 +22,7 @@ const resetLoginFormInput = () => async ( dispatch ) => {
 const SUBMIT_LOGIN_FORM = 'SUBMIT_LOGIN_FORM';
 const submitLoginForm = ( code ) => async ( dispatch ) => {
     try {
+      dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'loading'})
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/routes/users/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -29,7 +31,9 @@ const submitLoginForm = ( code ) => async ( dispatch ) => {
         if (response.status === 400) throw new Error('user not found');
         const data = await response.json();
         dispatch({ type: 'START_SESSION', payload: data });
+        dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'success' });
     } catch (error)  {
+      dispatch({ type: 'SET_LOGIN_FORM_STATUS', payload: 'error' });
 		console.log(`🔴 Error: ${error.message}`);
     }
 }
